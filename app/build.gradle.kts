@@ -45,6 +45,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":core-ui"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
+
     KotlinDependencies.run {
         implementation(kotlin)
         implementation(coroutines)
@@ -58,6 +62,7 @@ dependencies {
         implementation(lifeCycleKtx)
         implementation(lifeCycleLiveDataKtx)
         implementation(hilt)
+        implementation(swipeLayout)
     }
 
     KaptDependencies.run {
