@@ -11,6 +11,7 @@ object Versions {
     const val fragmentKtxVersion = "1.4.1"
     const val coroutinesAndroidVersion = "1.6.0"
     const val lifecycleVersion = "2.4.1"
+    const val swipeVersion = "1.1.0"
 
     const val gsonVersion = "2.8.6"
     const val glideVersion = "4.13.0"

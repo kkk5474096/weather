@@ -15,6 +15,7 @@ object AndroidXDependencies {
     const val lifeCycleKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleVersion}"
     const val lifeCycleLiveDataKtx =
         "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
+    const val swipeLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeVersion}"
 }
 
 object TestDependencies {
