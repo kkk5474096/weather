@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">weather</string>
+    <string name="main_title">Local Weather</string>
 </resources>
