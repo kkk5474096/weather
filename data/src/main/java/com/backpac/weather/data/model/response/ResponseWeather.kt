@@ -1,4 +1,4 @@
-package com.backpac.weather.data.response
+package com.backpac.weather.data.model.response
 
 import com.google.gson.annotations.SerializedName
 
