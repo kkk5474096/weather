@@ -67,7 +67,6 @@ dependencies {
 
     KaptDependencies.run {
         kapt(hiltCompiler)
-        kapt(glide)
     }
 
     implementation(MaterialDesignDependencies.materialDesign)
@@ -85,7 +84,8 @@ dependencies {
         implementation(retrofit)
         implementation(retrofitGsonConverter)
         implementation(gson)
-        implementation(glide)
         implementation(timber)
+        implementation(coil)
+        implementation(coilSvg)
     }
 }

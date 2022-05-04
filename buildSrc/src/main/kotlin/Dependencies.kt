@@ -31,12 +31,10 @@ object MaterialDesignDependencies {
 
 object KaptDependencies {
     const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hiltVersion}"
-    const val glide = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
 }
 
 object ThirdPartyDependencies {
     const val gson = "com.google.code.gson:gson:${Versions.gsonVersion}"
-    const val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
     const val retrofitGsonConverter =
         "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}"
@@ -45,6 +43,8 @@ object ThirdPartyDependencies {
     const val okHttp = "com.squareup.okhttp3:okhttp"
     const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
     const val okHttpBom = "com.squareup.okhttp3:okhttp-bom:${Versions.okHttpVersion}"
+    const val coil = "io.coil-kt:coil:${Versions.coilVersion}"
+    const val coilSvg = "io.coil-kt:coil-svg:${Versions.coilVersion}"
 }
 
 object ClassPathPlugins {

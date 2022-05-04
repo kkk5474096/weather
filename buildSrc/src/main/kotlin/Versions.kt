@@ -14,10 +14,10 @@ object Versions {
     const val swipeVersion = "1.1.0"
 
     const val gsonVersion = "2.8.6"
-    const val glideVersion = "4.13.0"
     const val retrofitVersion = "2.9.0"
     const val timberVersion = "5.0.1"
     const val okHttpVersion = "4.9.3"
+    const val coilVersion = "2.0.0-rc03"
 
     const val gradleVersion = "7.1.1"
 
