@@ -1,7 +1,7 @@
 package com.backpac.weather.di
 
 import com.backpac.weather.data.datasource.WeatherDataSource
-import com.backpac.weather.data.remote.WeatherDataSourceImpl
+import com.backpac.weather.data.datasource.remote.WeatherDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

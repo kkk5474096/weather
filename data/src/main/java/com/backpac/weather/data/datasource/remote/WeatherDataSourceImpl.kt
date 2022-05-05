@@ -1,4 +1,4 @@
-package com.backpac.weather.data.remote
+package com.backpac.weather.data.datasource.remote
 
 import com.backpac.weather.data.datasource.WeatherDataSource
 import com.backpac.weather.data.model.response.ResponseLocal
@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class WeatherDataSourceImpl @Inject constructor(
     private val service: WeatherService
-): WeatherDataSource {
+) : WeatherDataSource {
     override suspend fun getLocalList(): List<ResponseLocal> {
         return service.getLocalList()
     }

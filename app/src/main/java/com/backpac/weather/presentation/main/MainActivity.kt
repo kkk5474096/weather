@@ -47,6 +47,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
             binding.pbLoading.isVisible = false
             adapter.setItems(it)
         }
+
         viewModel.isLoading.observe(this) {
             binding.rvWeather.isVisible = !it
         }
