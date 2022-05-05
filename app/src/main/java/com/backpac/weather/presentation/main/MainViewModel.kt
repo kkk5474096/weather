@@ -25,7 +25,7 @@ class MainViewModel @Inject constructor(
 
     fun getWeather() {
         var weatherDetailList: MutableList<WeatherDetail>
-        val weatherResult: MutableList<Weather> = mutableListOf()
+        val weatherResult = mutableListOf<Weather>()
         viewModelScope.launch {
             _isLoading.value = true
             val localList = repository.getLocalList().map {
