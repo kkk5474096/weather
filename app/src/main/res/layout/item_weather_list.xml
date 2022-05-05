@@ -1,119 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="85dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tv_local"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:background="@drawable/shape_bg_line"
-        app:layout_constraintEnd_toStartOf="@id/cl_today"
-        app:layout_constraintHorizontal_weight="0.3"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="seoul" />
+    <data>
+
+        <variable
+            name="data"
+            type="com.backpac.weather.domain.entity.Weather" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_today"
-        android:layout_width="0dp"
-        android:background="@drawable/shape_bg_line"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toStartOf="@id/cl_tomorrow"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/tv_local">
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
 
-        <ImageView
-            android:id="@+id/iv_weather_today"
+        <TextView
+            android:id="@+id/tv_local"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.25"
-            tools:src="@drawable/ic_launcher_background" />
-
-        <TextView
-            android:id="@+id/tv_weather_today"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_bg_line"
+            android:gravity="center"
+            android:text="@{data.title}"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/iv_weather_today"
-            app:layout_constraintTop_toTopOf="@id/iv_weather_today"
-            tools:text="Heavy Rain" />
+            app:layout_constraintEnd_toStartOf="@id/cl_today"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="seoul" />
 
-        <TextView
-            android:id="@+id/tv_temp_today"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/red"
-            app:layout_constraintBottom_toBottomOf="@id/iv_weather_today"
-            app:layout_constraintStart_toStartOf="@id/tv_weather_today"
-            tools:text="4°C" />
-
-        <TextView
-            android:id="@+id/tv_humidity_today"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_weather_today"
-            app:layout_constraintStart_toEndOf="@id/tv_temp_today"
-            tools:text="65%" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_tomorrow"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/cl_today">
-
-        <ImageView
-            android:id="@+id/iv_weather_tomorrow"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_today"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.25"
-            tools:src="@drawable/ic_launcher_background" />
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_bg_line"
+            app:layout_constraintEnd_toStartOf="@id/cl_tomorrow"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_local">
 
-        <TextView
-            android:id="@+id/tv_weather_tomorrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/iv_weather_tomorrow"
-            app:layout_constraintTop_toTopOf="@id/iv_weather_tomorrow"
-            tools:text="Heavy Rain" />
+            <ImageView
+                android:id="@+id/iv_weather_today"
+                setImage="@{data.consolidatedWeather[0].weatherStateAbbr}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.3"
+                tools:src="@drawable/ic_launcher_background" />
 
-        <TextView
-            android:id="@+id/tv_temp_tomorrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/red"
-            app:layout_constraintBottom_toBottomOf="@id/iv_weather_tomorrow"
-            app:layout_constraintStart_toStartOf="@id/tv_weather_tomorrow"
-            tools:text="4°C" />
+            <TextView
+                android:id="@+id/tv_weather_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{data.consolidatedWeather[0].weatherStateName}"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_weather_today"
+                app:layout_constraintTop_toTopOf="@id/iv_weather_today"
+                tools:text="Heavy Rain" />
 
-        <TextView
-            android:id="@+id/tv_humidity_tomorrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_weather_tomorrow"
-            app:layout_constraintStart_toEndOf="@id/tv_temp_tomorrow"
-            tools:text="65%" />
+            <TextView
+                android:id="@+id/tv_temp_today"
+                setTemp="@{data.consolidatedWeather[0].theTemp}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                app:layout_constraintBottom_toBottomOf="@id/iv_weather_today"
+                app:layout_constraintStart_toStartOf="@id/tv_weather_today"
+                tools:text="4°C" />
+
+            <TextView
+                android:id="@+id/tv_humidity_today"
+                setHumidity="@{data.consolidatedWeather[0].humidity}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_weather_today"
+                app:layout_constraintStart_toEndOf="@id/tv_temp_today"
+                tools:text="65%" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_tomorrow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/cl_today">
+
+            <ImageView
+                android:id="@+id/iv_weather_tomorrow"
+                setImage="@{data.consolidatedWeather[1].weatherStateAbbr}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.3"
+                tools:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/tv_weather_tomorrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{data.consolidatedWeather[1].weatherStateName}"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_weather_tomorrow"
+                app:layout_constraintTop_toTopOf="@id/iv_weather_tomorrow"
+                tools:text="Heavy Rain" />
+
+            <TextView
+                android:id="@+id/tv_temp_tomorrow"
+                setTemp="@{data.consolidatedWeather[1].theTemp}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                app:layout_constraintBottom_toBottomOf="@id/iv_weather_tomorrow"
+                app:layout_constraintStart_toStartOf="@id/tv_weather_tomorrow"
+                tools:text="4°C" />
+
+            <TextView
+                android:id="@+id/tv_humidity_tomorrow"
+                setHumidity="@{data.consolidatedWeather[1].humidity}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_weather_tomorrow"
+                app:layout_constraintStart_toEndOf="@id/tv_temp_tomorrow"
+                tools:text="65%" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
